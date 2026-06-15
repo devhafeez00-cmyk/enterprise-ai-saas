@@ -12,6 +12,12 @@ from routers.chat import (
 from models.user import User
 from models.conversation import Conversation
 
+from routers.documents import (
+    router as document_router
+)
+
+
+
 Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
@@ -29,3 +35,7 @@ def ping():
     return {
         "message": "pong"
     }
+
+    app.include_router(
+    document_router
+)

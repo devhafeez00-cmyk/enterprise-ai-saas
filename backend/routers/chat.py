@@ -17,6 +17,10 @@ from models.conversation import (
     Conversation
 )
 
+from services.rag_service import (
+    rag_chat
+)
+
 router = APIRouter(
     prefix="/chat",
     tags=["AI Chat"]
@@ -29,7 +33,7 @@ def chat(
     db: Session = Depends(get_db)
 ):
 
-    ai_reply = generate_response(
+    ai_reply = rag_chat(
         request.message
     )
 
