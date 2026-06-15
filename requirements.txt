@@ -7,3 +7,4 @@ sqlalchemy
 pydantic
 python-jose
 passlib
+openai
