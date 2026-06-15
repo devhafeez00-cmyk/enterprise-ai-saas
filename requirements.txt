@@ -8,3 +8,6 @@ pydantic
 python-jose
 passlib
 openai
+chromadb
+pypdf
+sentence-transformers
